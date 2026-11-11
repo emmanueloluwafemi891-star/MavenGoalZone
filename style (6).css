@@ -1,0 +1,528 @@
+
+/* =================================
+   MAVENGOALZONE - MAIN STYLES
+================================= */
+
+:root {
+    --background: #080f1c;
+    --surface: #111c2e;
+    --surface-light: #1a2940;
+    --green: #20df83;
+    --text: #ffffff;
+    --muted: #9ba9bd;
+    --border: #263750;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--background);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* HEADER */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 5%;
+    background: #101a2b;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: var(--green);
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: var(--muted);
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--green);
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.points {
+    background: #1b3440;
+    color: var(--green);
+    padding: 10px 13px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.login-btn {
+    background: var(--green);
+    color: #06150d;
+    border: none;
+    border-radius: 5px;
+    padding: 11px 18px;
+    font-weight: bold;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 460px;
+    display: flex;
+    align-items: center;
+    padding: 60px 8%;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(8,15,28,0.98),
+            rgba(8,15,28,0.75),
+            rgba(8,15,28,0.25)
+        ),
+        url("https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=1400")
+        center/cover no-repeat;
+}
+
+.hero-content {
+    max-width: 570px;
+}
+
+.tagline {
+    color: var(--green);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(35px, 5vw, 58px);
+    line-height: 1.12;
+    margin-bottom: 20px;
+    font-weight: 900;
+}
+
+.hero h1 span {
+    color: var(--green);
+}
+
+.hero-content > p:not(.tagline) {
+    color: #c0ccdc;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.hero-btn {
+    display: inline-block;
+    background: var(--green);
+    color: #06150d;
+    padding: 14px 24px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* STATISTICS */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    padding: 35px 6%;
+}
+
+.stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 25px;
+    text-align: center;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.stat-card:hover {
+    border-color: var(--green);
+}
+
+.stat-card h2 {
+    color: var(--green);
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.stat-card p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* SECTION HEADINGS */
+
+.leagues-section,
+.matches-section,
+.leaderboard {
+    padding: 40px 6%;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.section-heading h2,
+.leaderboard h2 {
+    font-size: 25px;
+}
+
+.live-label {
+    color: var(--green);
+    font-size: 11px;
+    font-weight: bold;
+}
+
+/* LEAGUE CARDS */
+
+.league-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+}
+
+.league-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px 10px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.league-card:hover {
+    border-color: var(--green);
+    transform: translateY(-5px);
+}
+
+.league-card img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+    margin-bottom: 12px;
+}
+
+.league-card p {
+    font-size: 12px;
+    color: #d5deea;
+}
+
+/* MATCH FILTERS */
+
+.match-filters {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+}
+
+.filter-btn {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 11px 17px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: var(--green);
+    color: #06150d;
+    border-color: var(--green);
+}
+
+/* MATCH CARDS */
+
+.match-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.match-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 22px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.match-card:hover {
+    border-color: #45617d;
+}
+
+.match-league {
+    color: var(--green);
+    font-size: 11px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.teams {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}
+
+.team {
+    flex: 1;
+}
+
+.team img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.team p {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.vs {
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.match-time {
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+    margin: 20px 0;
+}
+
+.prediction-title {
+    color: var(--muted);
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.prediction-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 9px;
+}
+
+.prediction-options button {
+    background: var(--surface-light);
+    color: white;
+    border: 1px solid var(--border);
+    padding: 13px 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    transition: 0.3s;
+}
+
+.prediction-options button:hover {
+    background: var(--green);
+    color: #06150d;
+    border-color: var(--green);
+}
+
+/* LEADERBOARD */
+
+.leaderboard {
+    background: #0d1727;
+}
+
+#leaderboard-list {
+    margin-top: 22px;
+}
+
+.player-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 17px 20px;
+    margin-bottom: 10px;
+    border-radius: 7px;
+}
+
+.player-name {
+    font-size: 14px;
+}
+
+.player-points {
+    color: var(--green);
+    font-weight: bold;
+    font-size: 13px;
+}
+
+/* FOOTER */
+
+footer {
+    background: #060b14;
+    text-align: center;
+    padding: 40px 15px;
+    border-top: 1px solid var(--border);
+}
+
+footer .logo {
+    margin-bottom: 15px;
+}
+
+footer p {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+/* TABLET AND MOBILE */
+
+@media (max-width: 768px) {
+
+    .header {
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 15px 4%;
+    }
+
+    nav {
+        order: 3;
+        width: 100%;
+        justify-content: space-between;
+        gap: 8px;
+    }
+
+    nav a {
+        font-size: 11px;
+    }
+
+    .header-right {
+        gap: 7px;
+    }
+
+    .points {
+        font-size: 10px;
+        padding: 9px;
+    }
+
+    .login-btn {
+        padding: 9px 12px;
+        font-size: 11px;
+    }
+
+    .hero {
+        min-height: 380px;
+        padding: 45px 6%;
+    }
+
+    .stats {
+        padding: 25px 4%;
+        gap: 10px;
+    }
+
+    .stat-card {
+        padding: 18px 5px;
+    }
+
+    .stat-card h2 {
+        font-size: 22px;
+    }
+
+    .stat-card p {
+        font-size: 10px;
+    }
+
+    .leagues-section,
+    .matches-section,
+    .leaderboard {
+        padding: 30px 4%;
+    }
+
+    .league-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .match-list {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading h2 {
+        font-size: 21px;
+    }
+}
+
+@media (max-width: 380px) {
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .team img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .team p {
+        font-size: 11px;
+    }
+}
